@@ -18,10 +18,12 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-    allowedHosts: ['78ltn5-5192.csb.app', 'localhost', '127.0.0.1'],
+    host: true,
+    strictPort: true,
+    allowedHosts: ['78ltn5-3000.csb.app', '78ltn5-5192.csb.app', 'localhost', '127.0.0.1'],
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'http://localhost:3000',
         changeOrigin: true
       }
     }
